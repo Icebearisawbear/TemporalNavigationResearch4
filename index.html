@@ -3,15 +3,16 @@
 
 <head>
 <title> Challenges and Considerations Part 2</title>
+  <link rel="stylesheet" type="text/css" href="style.css"
 </head>
 
-<body>
+<body id="container" style="color: #bb00ff; font-family: 'roboto' , sans-serif; background-color: black;">
   <p>
-  <h1 style="color: blue; font-family: 'Roboto' , sans-serif;">
+  <h1 style="color: blue; font-family: 'roboto' , sans-serif;">
      Challenges and Considerations Part 2
     <hr>
   </p>
-      <h4 style="font-family: 'Roboto' , sans-serif;">
+      <h4>
     <p>
       Theoretical Speculation: The proposed equation is speculative and lacks empirical validation. It serves as a conceptual framework rather than a proven scientific model.
     </p>
@@ -50,21 +51,36 @@
           Scientific Timeline:
           In scientific research, a timeline documents the chronological sequence of discoveries, experiments, publications, and other significant events related to a particular field of study. Scientific timelines help researchers understand the historical development of ideas, theories, and methodologies, as well as the contributions of individual scientists and research groups.
         </p>
-        <a href="https://icebearisawbear.github.io/TemporalNavigationResearch5/">
-          <button>
-            click to view the next page
-          </button>
+
+        <a href="https://icebearisawbear.github.io/TemporalNavigationResearch5/" class="button">
+          click to go to the next page
         </a>
-        <a href="https://icebearisawbear.github.io/TemporalNavigationResearch3/">
-          <button>
-            click to view the previous page
-          </button>
+         <a href="https://icebearisawbear.github.io/TemporalNavigationResearch3/" class="button">
+           click to go to the previous page
+         </a>
+        <a href="https://icebearisawbear.github.io/TemporalNavigationResearch/" class="button">
+          click to go back to the start
         </a>
-        <a href="https://icebearisawbear.github.io/TemporalNavigationResearch/">
-          <button>
-            click to go back to the start
-          </button>
-        </a>
+        
+        <script>
+            (function() {
+                document.addEventListener("mousemove", parallax);
+                const elem = document.querySelector("#container");
+
+                function parallax(e) {
+                    let _w = window.innerWidth/2;
+                    let _h = window.innerHeight/2;
+                    let _mouseX = e.clientX;
+                    let _mouseY = e.clientY;
+                    let _depth1 = `${50 - (_mouseX - _w) * 0.01}% ${50 - (_mouseY - _h) * 0.01}%`;
+                    let _depth2 = `${50 - (_mouseX - _w) * 0.02}% ${50 - (_mouseY - _h) * 0.02}%`;
+                    let _depth3 = `${50 - (_mouseX - _w) * 0.06}% ${50 - (_mouseY - _h) * 0.06}%`;
+                    let x = `${_depth3}, ${_depth2}, ${_depth1}`;
+                    elem.style.backgroundPosition = x;
+                }
+            })();
+        </script>
+        
 </body>
 
 </html>
